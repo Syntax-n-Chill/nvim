@@ -28,4 +28,7 @@ vim.opt.foldlevel = 99
 
 vim.opt.clipboard = 'unnamedplus'
 
-vim.keymap.set('n', '<leader>fu', ':lua require("telescope.builtin").lsp_references()<CR>', { noremap = true, silent = true })
+vim.opt.termguicolors = true
+
+vim.keymap.set('n', '<leader>fu', ':lua require("telescope.builtin").lsp_references()<CR>',
+  { noremap = true, silent = true })
