@@ -30,4 +30,3 @@ Keybindings:
 - <leader>ct: Create a left-aligned titled line.
 - <leader>cl: Create a centered line.
 - <leader>cd: Remove a box or line.
-
