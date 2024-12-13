@@ -33,3 +33,14 @@ Keybindings:
 - <leader>ct: Create a left-aligned titled line.
 - <leader>cl: Create a centered line.
 - <leader>cd: Remove a box or line.
+
+# TODO
+- [ ] Function signatures
+- [ ] Use Vim motions with NeoTree (open/collapse directories/files)
+- [ ] Avante
+- [ ] Clean which-keys (create a directory with files for specific key bindings)
+- [ ] Setup an "Extras" directory, where we can put things like Avante (for if we open source this)
+    - [ ] Look through Christian's Lunar Vim setup for ideas
+- [ ] File tabs and keymap to quickly jump back and forth between buffers (Cybu)
+- [ ] Multi-cursor support (vim-visual-multi)
+- [ ] Setup flash.nvim/sneak.nvim for quickly navigating files
