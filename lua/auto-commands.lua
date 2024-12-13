@@ -25,6 +25,8 @@ vim.api.nvim_create_autocmd({ "InsertEnter" }, { group = searchHighlightGrp, pat
 -- Open and focus neo-tree
 vim.api.nvim_create_autocmd("VimEnter", {
   callback = function()
-    vim.cmd("Neotree filesystem focus left")
+    vim.cmd([[
+      Neotree filesystem focus left
+    ]])
   end
 })

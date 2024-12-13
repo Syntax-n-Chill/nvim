@@ -13,3 +13,5 @@ keymap('n', '<C-l>', '<C-w>l', opts)
 
 -- Ctrl + s save current file
 keymap('n', '<C-s>', ':w<cr>', opts)
+
+

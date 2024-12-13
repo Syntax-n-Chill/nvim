@@ -5,14 +5,17 @@ Lazy.nvim for plugin management.
 
 # Plugins
 
-## Catppuccin Theme (`catppuccin/nvim`)
-Provides a beautiful and customizable Neovim theme.
+## Theme 
+
+Plugin: [catppuccin/nvim](https://github.com/catppuccin/nvim)
+
+Description: Provides a beautiful and customizable Neovim theme.
 
 ## Code Comments
 
 ### Comment.nvim
 
-Plugin: numToStr/Comment.nvim
+Plugin: [numToStr/Comment.nvim](https://github.com/numToStr/Comment.nvim)
 
 Purpose: Easily comment and uncomment lines or blocks of code.
 
@@ -20,7 +23,7 @@ Keybindings: None explicitly configured.
 
 ### Comment-Box
 
-Plugin: LudoPinelli/comment-box.nvim
+Plugin: [LudoPinelli/comment-box.nvim](https://github.com/LudoPinelli/comment-box.nvim)
 
 Purpose: Create stylish comment boxes and lines.
 
