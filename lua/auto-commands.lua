@@ -30,31 +30,32 @@ vim.api.nvim_create_autocmd({ "InsertEnter" }, { group = searchHighlightGrp, pat
 vim.api.nvim_create_autocmd("VimEnter", {
 	callback = function()
 		vim.cmd([[
-        Neotree filesystem show left
-        ]])
-		--   -- Check if any floating windows are open
-		--   local floating_window_active = false
-		--   for _, win in ipairs(vim.api.nvim_list_wins()) do
-		--     local config = vim.api.nvim_win_get_config(win)
-		--     if config.relative ~= "" then
-		--       floating_window_active = true
-		--       break
-		--     end
-		--   end
-		--
-		--   -- ╭─────────────────────────────────────────────────────────╮
-		--   -- │ Open Neotree without focusing if a floating window is   │
-		--   -- │ active                                                  │
-		--   -- ╰─────────────────────────────────────────────────────────╯
-		--   if not floating_window_active then
-		--     vim.cmd([[
-		--       Neotree filesystem focus left
-		--       ]])
-		--   else
-		--     vim.cmd([[
-		--       Neotree filesystem show left
-		--       ]])
-		--   end
+      Neotree filesystem show left
+    ]])
+
+		-- Check if any floating windows are open
+		-- local floating_window_active = false
+		-- for _, win in ipairs(vim.api.nvim_list_wins()) do
+		-- 	local config = vim.api.nvim_win_get_config(win)
+		-- 	if config.relative ~= "" then
+		-- 		floating_window_active = true
+		-- 		break
+		-- 	end
+		-- end
+
+		-- ╭─────────────────────────────────────────────────────────╮
+		-- │ Open Neotree without focusing if a floating window is   │
+		-- │ active                                                  │
+		-- ╰─────────────────────────────────────────────────────────╯
+		-- if not floating_window_active then
+		-- 	vim.cmd([[
+		--     Neotree filesystem focus left
+		--     ]])
+		-- else
+		-- 	vim.cmd([[
+		--     Neotree filesystem show left
+		--     ]])
+		-- end
 	end,
 })
 

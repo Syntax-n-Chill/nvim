@@ -53,12 +53,14 @@ Keybindings:
 - [x] Clean which-keys (create a directory with files for specific key bindings)
 - [x] Setup an "Extras" directory, where we can put things like Avante (for if we open source this)
 - [x] File tabs and keymap to quickly jump back and forth between buffers
+- [x] nvim-surround
+- [x] Auto restoring nvim sessions
+- [x] Setup flash.nvim for quickly navigating code
 
 - [ ] Structure and setup default vim-options
 - [ ] Function lsp signatures
 - [ ] Multi-cursor support (vim-visual-multi)
 - [ ] Setup leap.nvim for quickly navigating code
-- [ ] nvim-surround
 - [ ] Need to setup individual lsp config files
   - [ ] typescript-tools (styled-components)
   - [ ] css
@@ -74,10 +76,8 @@ Keybindings:
   - [ ] prettier
   - [x] stylua
 
-- [x] Setup flash.nvim for quickly navigating code
 - [ ] Look through Christian's Lunar Vim setup for ideas
 - [ ] Configure `noice`
 - [ ] Auto reload config when saving
-- [ ] Auto restoring nvim sessions
 
 `:checkhealth which-key`
