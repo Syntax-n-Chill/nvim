@@ -4,11 +4,6 @@ local harpoon = require("harpoon")
 
 M.keys = {
   {
-    "<leader>e",
-    ":Neotree filesystem toggle left<CR>",
-    desc = "Toggle open/close Neotree",
-  },
-  {
     "<leader>a",
     "<cmd>quitall<CR>",
     desc = "Force quit project"
