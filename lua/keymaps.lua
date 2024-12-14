@@ -14,7 +14,7 @@ keymap('n', '<C-l>', '<C-w>l', opts)
 -- Ctrl + s save current file
 keymap('n', '<C-s>', ':w<cr>', opts)
 
-keymap('n', '<C-w>', '<Cmd>BufferKill<CR>', opts)
+-- keymap('n', '<C-w>', '<Cmd>BufferKill<CR>', opts)
 
 -- Cycle prev and next bufferline
 keymap('n', '<M-h>', ':BufferLineCyclePrev<CR>', opts)

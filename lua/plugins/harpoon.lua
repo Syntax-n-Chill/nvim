@@ -35,7 +35,7 @@ M.config = function ()
       "<leader>y",
       function()
         local file_name = vim.fn.expand('%:t')
-        require("notify")("Added " .. file_name, "info", { timeout = 1500, title = "Harpoon'd yo ass" })
+        vim.notify("Added " .. file_name, "info", { timeout = 1500, title = "Harpoon'd yo ass" })
         harpoon:list():add()
       end,
       silent = true,
@@ -52,7 +52,7 @@ M.config = function ()
     {
       "<leader>n",
       function()
-        harpoon:list().clear()
+        harpoon:list():clear()
       end,
       silent = true,
       desc = "Clear Harpoon list",
