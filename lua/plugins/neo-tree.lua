@@ -47,9 +47,12 @@ M.config = function()
   })
 
   local mappings = {
-    ["<cr>"] = "open",
-    ["l"] = "open",
-    ["h"] = "close_node",
+    -- Basic navigation and toggling
+    ["<cr>"] = "open",               -- Open file or directory
+    ["l"] = "open",                  -- Same as <cr>
+    ["o"] = "open", -- @NOTE: Should open directory or directory the file is in
+    ["h"] = "close_node",            -- Collapse directory
+    ["<space>"] = "toggle_node",     -- Expand/collapse directory
     ["P"] = function(state)
       local commands = require("neo-tree.sources.filesystem.commands")
 
@@ -67,6 +70,35 @@ M.config = function()
         M.notify_id = preview_toggle_notify()
       end
     end,
+    -- File and directory actions
+    ["a"] = "add",                   -- Add a file or directory
+    ["d"] = "delete",                -- Delete file or directory
+    ["r"] = "rename",                -- Rename file or directory
+    ["y"] = "copy_to_clipboard",     -- Copy file to clipboard
+    ["x"] = "cut_to_clipboard",      -- Cut file to clipboard
+    ["p"] = "paste_from_clipboard",  -- Paste file from clipboard
+    ["c"] = "copy",                  -- Copy file or directory
+    ["m"] = "move",                  -- Move file or directory
+
+    -- Search and filtering
+    -- ["f"] = "filter_on_submit",      -- Filter nodes by name
+    -- ["F"] = "clear_filter",          -- Clear filters
+    -- ["<C-f>"] = "search",            -- Search within directory
+    -- ["<C-r>"] = "refresh",           -- Refresh Neo-tree
+
+    -- File info and diagnostics
+    ["i"] = "show_file_details",     -- Show details for selected file
+    ["<C-i>"] = "toggle_hidden",     -- Toggle showing hidden files
+    ["<leader>gf"] = "scroll_preview", -- Scroll preview
+
+    -- Diagnostics integration
+    ["S"] = "open_split",            -- Open file in split
+    ["s"] = "open_vsplit",           -- Open file in vertical split
+    ["t"] = "open_tabnew",           -- Open file in new tab
+
+    -- Window management
+    -- ["R"] = "reveal_in_finder",      -- Reveal file in Finder/Explorer
+    ["?"] = "show_help",             -- Show help for mapping
   }
 
   require('neo-tree').setup({

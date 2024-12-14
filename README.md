@@ -42,8 +42,8 @@ Keybindings:
 - [ ] Setup linting/prettier file in lua
 - [x] Fix error with removing focus from Lazy window when installing
 - [ ] Need to setup individual lsp config files
-- [ ] Harpoon has an error when opening menu in Neotree
 - [ ] Setup [`conform.nvim`](https://github.com/stevearc/conform.nvim) to auto format on save
+- [x] Harpoon has an error when opening menu in Neotree
 - [ ] Structure and setup default vim-options
 - [ ] Use Vim motions with NeoTree (open/collapse directories/files)
 - [ ] Function signatures

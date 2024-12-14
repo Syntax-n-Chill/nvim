@@ -11,6 +11,20 @@ M.keys = {
     desc = "Force quit project"
   },
   {
+    "<leader>q",
+    ":bdelete<CR>",
+    desc = "Close current window",
+    mode = { "n", "v" }
+  },
+  {
+    "<leader>w",
+    function()
+      require('bufdelete').bufdelete(0, false)
+    end,
+    desc = "Close current bufferline",
+    mode = { "n", "v" }
+  },
+  {
     "<leader>?",
     function()
       require("which-key").show({ global = false })
@@ -29,12 +43,6 @@ M.keys = {
     desc = "Comment toggle linewise (visual)",
     mode = { "v" }
   },
-  {
-    "<leader>c",
-    "<Cmd>BufferKill<CR>",
-    desc = "Close current buffer",
-    mode = { "n", "v" }
-  }
 }
 
 return M
