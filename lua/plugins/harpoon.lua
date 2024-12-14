@@ -28,6 +28,52 @@ M.config = function ()
 
   vim.keymap.set("n", "<C-e>", function() toggle_telescope(harpoon:list()) end,
     { desc = "Open harpoon window" })
+
+  local wk = require("which-key")
+  wk.add({
+    {
+      "<leader>y",
+      function()
+        local file_name = vim.fn.expand('%:t')
+        require("notify")("Added " .. file_name, "info", { timeout = 1500, title = "Harpoon'd yo ass" })
+        harpoon:list():add()
+      end,
+      silent = true,
+      desc = "Add Harpoon mark",
+    },
+    {
+      "<C-e>",
+      function()
+        harpoon.ui:toggle_quick_menu(harpoon:list())
+      end,
+      silent = true,
+      desc = "Toggle Harpoon menu",
+    },
+    {
+      "<leader>n",
+      function()
+        harpoon:list().clear()
+      end,
+      silent = true,
+      desc = "Clear Harpoon list",
+    },
+    {
+      "<leader>j",
+      function()
+        harpoon:list():next()
+      end,
+      silent = true,
+      desc = "Cycle to next Harpoon",
+    },
+    {
+      "<leader>k",
+      function()
+        harpoon:list():prev()
+      end,
+      silent = true,
+      desc = "Cycle to prev Harpoon",
+    },
+  })
 end
 
 return M
