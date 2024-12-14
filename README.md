@@ -74,7 +74,7 @@ Keybindings:
   - [ ] prettier
   - [x] stylua
 
-- [ ] Setup flash.nvim for quickly navigating code
+- [x] Setup flash.nvim for quickly navigating code
 - [ ] Look through Christian's Lunar Vim setup for ideas
 - [ ] Configure `noice`
 - [ ] Auto reload config when saving
