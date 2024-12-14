@@ -23,6 +23,7 @@ return {
       buffers = {
         follow_current_file = { enabled = true }, -- Highlight the file in the Buffers source
       },
+      default_mappings = false,
       window = {
         mappings = {
           ["<leader>gf"] = "scroll_preview",
