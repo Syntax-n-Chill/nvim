@@ -1,5 +1,4 @@
 return {
-  {
     "lewis6991/gitsigns.nvim",
     dependencies = { "nvim-lua/plenary.nvim" }, -- Required dependency
     config = function()
@@ -60,24 +59,5 @@ return {
       vim.keymap.set("n", "<leader>hp", function()
         require("gitsigns").preview_hunk()
       end, { desc = "Preview Hunk" })
-    end,
-  },
-
-  {
-    "kdheepak/lazygit.nvim",
-    lazy = true,
-    cmd = {
-      "LazyGit",
-      "LazyGitConfig",
-      "LazyGitCurrentFile",
-      "LazyGitFilter",
-      "LazyGitFilterCurrentFile",
-    },
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-    },
-    keys = {
-      { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" }
-    }
-  }
+    end
 }

@@ -19,3 +19,6 @@ keymap('n', '<C-s>', ':w<cr>', opts)
 -- Cycle prev and next bufferline
 keymap('n', '<M-h>', ':BufferLineCyclePrev<CR>', opts)
 keymap('n', '<M-l>', ':BufferLineCycleNext<CR>', opts)
+
+keymap('n', '<A-h>', ':BufferLineCyclePrev<CR>', opts)
+keymap('n', '<A-l>', ':BufferLineCycleNext<CR>', opts)
