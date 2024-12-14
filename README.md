@@ -53,10 +53,11 @@ Keybindings:
 - [x] Clean which-keys (create a directory with files for specific key bindings)
 - [x] Setup an "Extras" directory, where we can put things like Avante (for if we open source this)
 - [x] File tabs and keymap to quickly jump back and forth between buffers
+- [x] Function lsp signatures
+- [x] Multi-cursor support (vim-visual-multi)
+- [x] Ability to visual select a block of text and press < or > to indent without losing visual selection
 
 - [ ] Structure and setup default vim-options
-- [ ] Function lsp signatures
-- [ ] Multi-cursor support (vim-visual-multi)
 - [ ] Setup leap.nvim for quickly navigating code
 - [ ] nvim-surround
 - [ ] Need to setup individual lsp config files
