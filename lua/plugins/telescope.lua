@@ -10,8 +10,8 @@ return {
     local opts = { noremap = true, silent = false }
 
     -- Use vim.keymap.set for Lua functions
-    keymap('n', '<C-f>', ':Telescope live_grep<CR>', opts) -- Ctrl + f: Find files
-    keymap('n', '<C-F>', ':Telescope find_files<CR>', opts) -- Ctrl + Shift + f: Live grep
+    keymap('n', '<C-f>', ':Telescope live_grep<CR>', opts) -- Ctrl + f: Live Grep
+    keymap('n', '<leader>f', ':Telescope find_files<CR>', opts) -- <leader> + f: Find Files
   end,
   },
   {

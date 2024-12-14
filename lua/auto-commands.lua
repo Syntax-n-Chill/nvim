@@ -1,4 +1,6 @@
--- Remove highlight on insert or cursor moved
+-- ╭─────────────────────────────────────────────────────────╮
+-- │ Remove highlight on insert or cursor moved              │
+-- ╰─────────────────────────────────────────────────────────╯
 vim.api.nvim_set_keymap('n', '<Plug>(StopHL)', "execute('nohlsearch')[-1]", { noremap = true, expr = true })
 vim.api.nvim_set_keymap('i', '<Plug>(StopHL)', "execute('nohlsearch')[-1]", { noremap = true, expr = true })
 
@@ -21,7 +23,10 @@ local searchHighlightGrp = vim.api.nvim_create_augroup('SearchHighlight', { clea
 vim.api.nvim_create_autocmd({ "CursorMoved" }, { group = searchHighlightGrp, pattern = '*', callback = HlSearch })
 vim.api.nvim_create_autocmd({ "InsertEnter" }, { group = searchHighlightGrp, pattern = '*', callback = StopHL })
 
--- Open and focus neo-tree (conditionally prioritize Lazy window focus)
+-- ╭─────────────────────────────────────────────────────────╮
+-- │ Open and focus neo-tree (conditionally prioritize Lazy  │
+-- │ window focus)                                           │
+-- ╰─────────────────────────────────────────────────────────╯
 vim.api.nvim_create_autocmd("VimEnter", {
   callback = function()
     -- Check if any floating windows are open
@@ -34,7 +39,10 @@ vim.api.nvim_create_autocmd("VimEnter", {
       end
     end
 
-    -- Open Neotree without focusing if a floating window is active
+-- ╭─────────────────────────────────────────────────────────╮
+-- │ Open Neotree without focusing if a floating window is   │
+-- │ active                                                  │
+-- ╰─────────────────────────────────────────────────────────╯
     if not floating_window_active then
       vim.cmd([[
         Neotree filesystem focus left
@@ -46,3 +54,17 @@ vim.api.nvim_create_autocmd("VimEnter", {
     end
   end,
 })
+
+
+-- ╭─────────────────────────────────────────────────────────╮
+-- │ Add keymaps specifically for Neo-tree buffers           │
+-- ╰─────────────────────────────────────────────────────────╯
+    vim.api.nvim_create_autocmd("FileType", {
+      pattern = "neo-tree",
+      callback = function()
+        -- Set Telescope keymaps for Neo-tree
+        local opts = { noremap = true, silent = false, buffer = true }
+        vim.keymap.set('n', '<C-f>', ':Telescope live_grep<CR>', opts)
+        vim.keymap.set('n', '<leader>f', ':Telescope find_files<CR>', opts)
+      end,
+    })
