@@ -1,11 +1,4 @@
-return {
-  {
-    'numToStr/Comment.nvim',
-    opts = {
-      -- add any options here
-    }
-  },
-  {
+  return {
     "LudoPinelli/comment-box.nvim",
     config = function()
       local keymap = vim.keymap.set
@@ -64,4 +57,3 @@ return {
       keymap({ "n", "v" }, "<Leader>cd", "<Cmd>CBd<CR>", opts)
     end
   }
-}
