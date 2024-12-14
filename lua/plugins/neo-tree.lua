@@ -51,6 +51,8 @@ M.config = function()
     ["<cr>"] = "open",               -- Open file or directory
     ["l"] = "open",                  -- Same as <cr>
     ["o"] = "open", -- @NOTE: Should open directory or directory the file is in
+    ["<2-LeftMouse>"] = "open", -- Left-click to open a file or expand/collapse a directory
+    ["<2-RightMouse>"] = "close_node", -- Right-click to collapse a directory
     ["h"] = "close_node",            -- Collapse directory
     ["<space>"] = "toggle_node",     -- Expand/collapse directory
     ["P"] = function(state)
@@ -101,21 +103,6 @@ M.config = function()
     ["?"] = "show_help",             -- Show help for mapping
   }
 
-  require('neo-tree').setup({
-    filesystem = {
-      follow_current_file = { enabled = true },
-      hijack_netrw = true,
-      use_libuv_file_watcher = true,
-    },
-    buffers = {
-      follow_current_file = { enabled = true },
-    },
-    use_default_mappings = false,
-    window = {
-      mappings = mappings,
-    },
-  })
-
   vim.api.nvim_create_autocmd("BufEnter", {
     pattern = { "neo-tree*", "!neo-tree.lua" },
     callback = function()
@@ -135,6 +122,21 @@ M.config = function()
         dismiss_toggle_notify()
       end
     end,
+  })
+
+  require('neo-tree').setup({
+    filesystem = {
+      follow_current_file = { enabled = true },
+      hijack_netrw = true,
+      use_libuv_file_watcher = true,
+    },
+    buffers = {
+      follow_current_file = { enabled = true },
+    },
+    use_default_mappings = false,
+    window = {
+      mappings = mappings,
+    },
   })
 end
 

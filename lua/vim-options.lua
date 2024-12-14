@@ -8,6 +8,8 @@ vim.cmd("set relativenumber")
 
 vim.g.mapleader = " "
 
+vim.o.mouse = "a" -- Enable mouse for all modes
+
 -- Enable folding
 -- vim.opt.foldenable = true
 --
