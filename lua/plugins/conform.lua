@@ -6,6 +6,10 @@ local M = {
 
 M.config = function ()
 require("conform").setup({
+    format_on_save = {
+      timeout_ms = 250,
+      lsp_format = "fallback",
+    },
   formatters_by_ft = {
     lua = { "stylua" },
     -- Conform will run multiple formatters sequentially
