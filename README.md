@@ -56,10 +56,12 @@ Keybindings:
 - [x] Function lsp signatures
 - [x] Multi-cursor support (vim-visual-multi)
 - [x] Ability to visual select a block of text and press < or > to indent without losing visual selection
+- [x] Auto restoring nvim sessions
+- [x] Setup flash.nvim for quickly navigating code
 
+- [] nvim-surround
 - [ ] Structure and setup default vim-options
 - [ ] Setup leap.nvim for quickly navigating code
-- [ ] nvim-surround
 - [ ] Need to setup individual lsp config files
   - [ ] typescript-tools (styled-components)
   - [ ] css
@@ -75,10 +77,8 @@ Keybindings:
   - [ ] prettier
   - [x] stylua
 
-- [ ] Setup flash.nvim for quickly navigating code
 - [ ] Look through Christian's Lunar Vim setup for ideas
 - [ ] Configure `noice`
 - [ ] Auto reload config when saving
-- [ ] Auto restoring nvim sessions
 
 `:checkhealth which-key`
