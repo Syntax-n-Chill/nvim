@@ -1,4 +1,4 @@
--- REMOVE HIGHLIGHT ON INSERT OR CURSORMOVED -- START
+-- Remove highlight on insert or cursor moved
 vim.api.nvim_set_keymap('n', '<Plug>(StopHL)', "execute('nohlsearch')[-1]", { noremap = true, expr = true })
 vim.api.nvim_set_keymap('i', '<Plug>(StopHL)', "execute('nohlsearch')[-1]", { noremap = true, expr = true })
 
@@ -20,13 +20,29 @@ end
 local searchHighlightGrp = vim.api.nvim_create_augroup('SearchHighlight', { clear = true })
 vim.api.nvim_create_autocmd({ "CursorMoved" }, { group = searchHighlightGrp, pattern = '*', callback = HlSearch })
 vim.api.nvim_create_autocmd({ "InsertEnter" }, { group = searchHighlightGrp, pattern = '*', callback = StopHL })
--- REMOVE HIGHLIGHT ON INSERT OR CURSORMOVED -- END
 
--- Open and focus neo-tree
+-- Open and focus neo-tree (conditionally prioritize Lazy window focus)
 vim.api.nvim_create_autocmd("VimEnter", {
   callback = function()
-    vim.cmd([[
-      Neotree filesystem focus left
-    ]])
-  end
+    -- Check if any floating windows are open
+    local floating_window_active = false
+    for _, win in ipairs(vim.api.nvim_list_wins()) do
+      local config = vim.api.nvim_win_get_config(win)
+      if config.relative ~= "" then
+        floating_window_active = true
+        break
+      end
+    end
+
+    -- Open Neotree without focusing if a floating window is active
+    if not floating_window_active then
+      vim.cmd([[
+        Neotree filesystem focus left
+      ]])
+    else
+      vim.cmd([[
+        Neotree filesystem show left
+      ]])
+    end
+  end,
 })

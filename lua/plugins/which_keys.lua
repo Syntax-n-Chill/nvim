@@ -47,6 +47,22 @@ M.keys = {
     desc = "Clear Harpoon list",
   },
   {
+    "<leader>j",
+    function()
+      harpoon:list():next()
+    end,
+    silent = true,
+    desc = "Cycle to next Harpoon",
+  },
+  {
+    "<leader>k",
+    function()
+      harpoon:list():prev()
+    end,
+    silent = true,
+    desc = "Cycle to prev Harpoon",
+  },
+  {
     "<leader>/",
     "<Plug>(comment_toggle_linewise_current)",
     desc = "Comment toggle current line",
@@ -57,6 +73,12 @@ M.keys = {
     "<Plug>(comment_toggle_linewise_visual)",
     desc = "Comment toggle linewise (visual)",
     mode = { "v" }
+  },
+  {
+    "<leader>c",
+    "<Cmd>BufferKill<CR>",
+    desc = "Close current buffer",
+    mode = { "n", "v" }
   }
 }
 
