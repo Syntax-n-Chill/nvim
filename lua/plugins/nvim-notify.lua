@@ -6,6 +6,8 @@ return {
     vim.notify = require("notify")
     notify.setup({
       -- background_colour = "#000000",
+      max_width = 40,               -- Default maximum width
+      max_height = 10,              -- Default maximum height
       timeout = 3000,
       stages = "fade",
       fps = 60,

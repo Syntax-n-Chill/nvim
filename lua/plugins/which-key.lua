@@ -1,4 +1,8 @@
-local M = {}
+local M = {
+  "folke/which-key.nvim",
+  event = "VeryLazy",
+  opts = {},
+}
 
 M.keys = {
   {
@@ -33,9 +37,4 @@ M.keys = {
   }
 }
 
-return {
-  "folke/which-key.nvim",
-  event = "VeryLazy",
-  opts = {},
-  keys = M.keys
-}
+return M
