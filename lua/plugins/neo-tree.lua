@@ -23,6 +23,16 @@ return {
       buffers = {
         follow_current_file = { enabled = true }, -- Highlight the file in the Buffers source
       },
+      window = {
+        mappings = {
+          ["<leader>gf"] = "scroll_preview",
+          ["h"] = "close_node", -- Collapse directories
+          ["l"] = "open",       -- Open a file or expand a directory
+          ["<space>"] = "toggle_node", -- Optional: Toggle node expansion
+          ["<cr>"] = "open",    -- Open a file or directory (redundant with 'l')
+          ["<esc>"] = "close_window", -- Close the Neo-tree window
+        },
+      },
     })
   end,
 }
