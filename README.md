@@ -1,11 +1,12 @@
 # Neovim Config
+
 This is a breakdown of the Neovim configuration, including all plugins,
-their features, and any associated keybindings. The setup uses 
+their features, and any associated keybindings. The setup uses
 Lazy.nvim for plugin management.
 
 # Plugins
 
-## Theme 
+## Theme
 
 Plugin: [catppuccin/nvim](https://github.com/catppuccin/nvim)
 
@@ -28,6 +29,7 @@ Plugin: [LudoPinelli/comment-box.nvim](https://github.com/LudoPinelli/comment-bo
 Purpose: Create stylish comment boxes and lines.
 
 Keybindings:
+
 - <leader>cb: Create a left-aligned box.
 - <leader>cc: Create a centered box.
 - <leader>ct: Create a left-aligned titled line.
@@ -41,22 +43,41 @@ Keybindings:
 - [x] Add [`bufferline.nvim`](https://github.com/akinsho/bufferline.nvim) to show file names and ability to use mouse
 - [x] Setup linting/prettier file in lua
 - [x] Fix error with removing focus from Lazy window when installing
-- [ ] Need to setup individual lsp config files
-- [ ] Linters and formatters
-- [ ] Setup [`conform.nvim`](https://github.com/stevearc/conform.nvim) to auto format on save
 - [x] Harpoon has an error when opening menu in Neotree
-- [ ] Structure and setup default vim-options
 - [x] Use Vim motions with NeoTree (open/collapse directories/files)
-- [ ] Function signatures
 - [x] Avante
-- [ ] Clean which-keys (create a directory with files for specific key bindings)
-- [ ] Setup an "Extras" directory, where we can put things like Avante (for if we open source this)
-    - [ ] Look through Christian's Lunar Vim setup for ideas
-- [ ] File tabs and keymap to quickly jump back and forth between buffers (Cybu)
-- [ ] Multi-cursor support (vim-visual-multi)
-- [ ] Setup flash.nvim/sneak.nvim for quickly navigating files
 - [x] Git blame off by default, add a toggle
 - [x] After push/commit, clear NeoTree Git status indicators
 - [x] Show hidden files
+- [x] Setup [`conform.nvim`](https://github.com/stevearc/conform.nvim) to auto format on save
+- [x] Clean which-keys (create a directory with files for specific key bindings)
+- [x] Setup an "Extras" directory, where we can put things like Avante (for if we open source this)
+- [x] File tabs and keymap to quickly jump back and forth between buffers
+
+- [ ] Structure and setup default vim-options
+- [ ] Function lsp signatures
+- [ ] Multi-cursor support (vim-visual-multi)
+- [ ] Setup leap.nvim for quickly navigating code
+- [ ] nvim-surround
+- [ ] Need to setup individual lsp config files
+  - [ ] typescript-tools (styled-components)
+  - [ ] css
+  - [ ] html
+  - [ ] golang
+  - [ ] json
+  - [ ] yaml
+  - [ ] vue
+  - [x] lua
+- [ ] Linters and formatters
+
+  - [ ] eslint
+  - [ ] prettier
+  - [x] stylua
+
+- [ ] Setup flash.nvim for quickly navigating code
+- [ ] Look through Christian's Lunar Vim setup for ideas
+- [ ] Configure `noice`
+- [ ] Auto reload config when saving
+- [ ] Auto restoring nvim sessions
 
 `:checkhealth which-key`
