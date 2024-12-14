@@ -55,6 +55,7 @@ M.config = function()
     ["<2-RightMouse>"] = "close_node", -- Right-click to collapse a directory
     ["h"] = "close_node",            -- Collapse directory
     ["<space>"] = "toggle_node",     -- Expand/collapse directory
+    ["H"] = "toggle_hidden", -- Toggle hidden files
     ["P"] = function(state)
       local commands = require("neo-tree.sources.filesystem.commands")
 

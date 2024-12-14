@@ -62,12 +62,24 @@ vim.api.nvim_create_autocmd("VimEnter", {
 -- ╭─────────────────────────────────────────────────────────╮
 -- │ Add keymaps specifically for Neo-tree buffers           │
 -- ╰─────────────────────────────────────────────────────────╯
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "neo-tree",
+    vim.api.nvim_create_autocmd("FileType", {
+      pattern = "neo-tree",
+      callback = function()
+        -- Set Telescope keymaps for Neo-tree
+        local opts = { noremap = true, silent = false, buffer = true }
+        vim.keymap.set('n', '<C-f>', ':Telescope live_grep<CR>', opts)
+        vim.keymap.set('n', '<leader>f', ':Telescope find_files<CR>', opts)
+      end,
+    })
+
+-- ╭─────────────────────────────────────────────────────────╮
+-- │ Auto-refresh Neotree whenever GitSignsUpdate.           │
+-- ╰─────────────────────────────────────────────────────────╯
+local events = require("neo-tree.events")
+
+vim.api.nvim_create_autocmd("User", {
+  pattern = "GitSignsUpdate",
   callback = function()
-    -- Set Telescope keymaps for Neo-tree
-    local opts = { noremap = true, silent = false, buffer = true }
-    vim.keymap.set('n', '<C-f>', ':Telescope live_grep<CR>', opts)
-    vim.keymap.set('n', '<leader>f', ':Telescope find_files<CR>', opts)
+    events.fire_event(events.GIT_EVENT) -- Trigger Neo-tree Git refresh
   end,
 })
