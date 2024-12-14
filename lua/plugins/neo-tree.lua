@@ -125,6 +125,13 @@ M.config = function()
   })
 
   require('neo-tree').setup({
+    default_component_configs = {
+      indent = {
+        expander_collapsed = "", -- Icon for collapsed directories
+        expander_expanded = "", -- Icon for expanded directories
+        expander_highlight = "NeoTreeExpander", -- Highlight group for the icons
+      }
+    },
     filesystem = {
       follow_current_file = { enabled = true },
       hijack_netrw = true,

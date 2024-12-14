@@ -12,6 +12,7 @@ return {
     -- Use vim.keymap.set for Lua functions
     keymap('n', '<C-f>', ':Telescope live_grep<CR>', opts) -- Ctrl + f: Live Grep
     keymap('n', '<leader>f', ':Telescope find_files<CR>', opts) -- <leader> + f: Find Files
+    keymap('n', '<leader>r', ':Telescope oldfiles<CR>', opts)
   end,
   },
   {

@@ -1,0 +1,18 @@
+return {
+  "lua_ls",
+  "cssls",
+  "ts_ls",
+  "prismals",
+  "html",
+  "gopls",
+  "eslint",
+  "spectral",
+  "astro",
+  "pyright",
+  "bashls",
+  "jsonls",
+  "yamlls",
+  "marksman",
+  "tailwindcss",
+  "rust_analyzer",
+}

@@ -12,7 +12,8 @@ M.keys = {
   },
   {
     "<leader>q",
-    ":bdelete<CR>",
+    ":q<CR>",
+    -- ":bdelete<CR>",
     desc = "Close current window",
     mode = { "n", "v" }
   },
