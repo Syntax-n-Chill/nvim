@@ -53,10 +53,10 @@ Keybindings:
 - [x] Clean which-keys (create a directory with files for specific key bindings)
 - [x] Setup an "Extras" directory, where we can put things like Avante (for if we open source this)
 - [x] File tabs and keymap to quickly jump back and forth between buffers
-- [x] nvim-surround
 - [x] Auto restoring nvim sessions
 - [x] Setup flash.nvim for quickly navigating code
 
+- [] nvim-surround
 - [ ] Structure and setup default vim-options
 - [ ] Function lsp signatures
 - [ ] Multi-cursor support (vim-visual-multi)
