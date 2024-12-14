@@ -55,5 +55,7 @@ Keybindings:
 - [ ] Multi-cursor support (vim-visual-multi)
 - [ ] Setup flash.nvim/sneak.nvim for quickly navigating files
 
+- [ ] Git blame off by default, add a toggle
+- [ ] After push/commit, clear NeoTree Git status indicators
 
 `:checkhealth which-key`

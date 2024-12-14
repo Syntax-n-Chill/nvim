@@ -68,3 +68,15 @@ vim.api.nvim_create_autocmd("VimEnter", {
         vim.keymap.set('n', '<leader>f', ':Telescope find_files<CR>', opts)
       end,
     })
+
+-- ╭─────────────────────────────────────────────────────────╮
+-- │ Auto-refresh Neotree whenever GitSignsUpdate.           │
+-- ╰─────────────────────────────────────────────────────────╯
+local events = require("neo-tree.events")
+
+vim.api.nvim_create_autocmd("User", {
+  pattern = "GitSignsUpdate",
+  callback = function()
+    events.fire_event(events.GIT_EVENT) -- Trigger Neo-tree Git refresh
+  end,
+})
