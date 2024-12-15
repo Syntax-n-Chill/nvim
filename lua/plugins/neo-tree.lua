@@ -1,4 +1,4 @@
-local icons = require 'user.icons'
+local icons = require('user.icons')
 
 local M = {
   'nvim-neo-tree/neo-tree.nvim',
@@ -30,19 +30,19 @@ end
 local dismiss_toggle_notify = function()
   -- Clear previous notification if any
   if M.notify_id then
-    require('notify').dismiss { id = M.notify_id }
+    require('notify').dismiss({ id = M.notify_id })
     M.notify_id = nil
   end
 end
 
 M.config = function()
-  require('which-key').add {
+  require('which-key').add({
     {
       '<leader>e',
       ':Neotree filesystem toggle left<CR>',
       desc = 'Toggle open/close Neo-tree',
     },
-  }
+  })
 
   local mappings = {
     -- Basic navigation and toggling
@@ -55,7 +55,7 @@ M.config = function()
     ['<space>'] = 'toggle_node', -- Expand/collapse directory
     ['H'] = 'toggle_hidden', -- Toggle hidden files
     ['P'] = function(state)
-      local commands = require 'neo-tree.sources.filesystem.commands'
+      local commands = require('neo-tree.sources.filesystem.commands')
 
       -- Toggle preview and update state
       M.preview_state = not M.preview_state
@@ -106,7 +106,7 @@ M.config = function()
     pattern = { 'neo-tree*', '!neo-tree.lua' },
     callback = function()
       if M.preview_state and not M.notify_id then
-        local commands = require 'neo-tree.sources.filesystem.commands'
+        local commands = require('neo-tree.sources.filesystem.commands')
         commands.toggle_preview(M.neotree_state)
 
         M.notify_id = preview_toggle_notify()
@@ -123,46 +123,53 @@ M.config = function()
     end,
   })
 
-  require('neo-tree').setup {
-    default_component_configs = {
-      indent = {
-        expander_collapsed = '', -- Icon for collapsed directories
-        expander_expanded = '', -- Icon for expanded directories
-        expander_highlight = 'NeoTreeExpander', -- Highlight group for the icons
-      },
-      git_status = {
-        show_untracked = true, -- Show untracked files
-        show_ignored = false, -- Hide ignored files
-        show_unstaged = true, -- Show unstaged changes
-        show_staged = true, -- Show staged changes
-        symbols = {
-          added = icons.git.LineAdded, -- File added
-          modified = icons.git.LineModified, -- File modified
-          deleted = icons.git.LineRemoved, -- File deleted
-          renamed = icons.git.FileRenamed, -- File renamed
-          untracked = icons.git.FileUntracked, -- Untracked file
-          ignored = icons.git.FileIgnored, -- Ignored file
-          unstaged = icons.git.FileUnstaged, -- Unstaged changes
-          staged = icons.git.FileStaged, -- Staged changes
-          conflict = icons.git.FileUnmerged, -- Conflict detected				},
-        },
-      },
-      filesystem = {
-        follow_current_file = { enabled = true },
-        hijack_netrw = true,
-        use_libuv_file_watcher = true,
-        hide_dotfiles = false, -- Show dotfiles
+  require('neo-tree').setup({
+    filesystem = {
+      follow_current_file = { enabled = true },
+      hijack_netrw = true,
+      use_libuv_file_watcher = true,
+      filtered_items = {
+        visible = false, -- Ensure hidden files can be toggled visible
+        hide_dotfiles = false, -- Do not hide dotfiles
         hide_gitignored = true, -- Hide files ignored by .gitignore
-      },
-      buffers = {
-        follow_current_file = { enabled = true },
-      },
-      use_default_mappings = false,
-      window = {
-        mappings = mappings,
+        hide_by_name = { '.git' }, -- Always hide the .git folder
+        always_show = {}, -- Leave this empty to allow .gitignore rules to apply
+        never_show = {}, -- No additional exclusions
+        never_show_by_pattern = {}, -- No patterns to exclude
       },
     },
-  }
+    default_component_configs = {
+      indent = {
+        expander_collapsed = '',
+        expander_expanded = '',
+        expander_highlight = 'NeoTreeExpander',
+      },
+      git_status = {
+        show_untracked = true,
+        show_ignored = false, -- Do not show gitignored files
+        show_unstaged = true,
+        show_staged = true,
+        symbols = {
+          added = icons.git.LineAdded,
+          modified = icons.git.LineModified,
+          deleted = icons.git.LineRemoved,
+          renamed = icons.git.FileRenamed,
+          untracked = icons.git.FileUntracked,
+          ignored = icons.git.FileIgnored,
+          unstaged = icons.git.FileUnstaged,
+          staged = icons.git.FileStaged,
+          conflict = icons.git.FileUnmerged,
+        },
+      },
+    },
+    buffers = {
+      follow_current_file = { enabled = true },
+    },
+    use_default_mappings = false,
+    window = {
+      mappings = mappings,
+    },
+  })
 end
 
 return M
