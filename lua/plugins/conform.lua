@@ -1,25 +1,23 @@
 local M = {
-  'stevearc/conform.nvim',
-  opts = {},
-  
+	"stevearc/conform.nvim",
+	opts = {},
 }
 
-M.config = function ()
-require("conform").setup({
-    format_on_save = {
-      timeout_ms = 250,
-      lsp_format = "fallback",
-    },
-  formatters_by_ft = {
-    lua = { "stylua" },
-    -- Conform will run multiple formatters sequentially
-    python = { "isort", "black" },
-    -- You can customize some of the format options for the filetype (:help conform.format)
-    rust = { "rustfmt", lsp_format = "fallback" },
-    -- Conform will run the first available formatter
-    javascript = { "prettierd", "prettier", stop_after_first = true },
-  },
-})
-
+M.config = function()
+	require("conform").setup({
+		format_on_save = {
+			timeout_ms = 250,
+			lsp_format = "fallback",
+		},
+		formatters_by_ft = {
+			lua = { "stylua" },
+			-- Conform will run multiple formatters sequentially
+			python = { "isort", "black" },
+			-- You can customize some of the format options for the filetype (:help conform.format)
+			rust = { "rustfmt", lsp_format = "fallback" },
+			-- Conform will run the first available formatter
+			javascript = { "prettierd", "prettier", stop_after_first = true },
+		},
+	})
 end
-  return M
+return M
