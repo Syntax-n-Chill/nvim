@@ -58,27 +58,26 @@ Keybindings:
 - [x] Ability to visual select a block of text and press < or > to indent without losing visual selection
 - [x] Auto restoring nvim sessions
 - [x] Setup flash.nvim for quickly navigating code
-
-- [] nvim-surround
+- [ ] nvim-surround
 - [ ] Structure and setup default vim-options
-- [ ] Setup leap.nvim for quickly navigating code
+- [x] Setup leap.nvim for quickly navigating code
 - [ ] Need to setup individual lsp config files
-  - [ ] typescript-tools (styled-components)
-  - [ ] css
-  - [ ] html
+  - [ ] ts_ls
+  - [x] typescript-tools (styled-components)
+  - [ ] cssls
+  - [ ] htmls
   - [ ] golang
   - [ ] json
   - [ ] yaml
   - [ ] vue
   - [x] lua
-- [ ] Linters and formatters
-
-  - [ ] eslint
-  - [ ] prettier
+- [x] Linters and formatters
+  - [x] eslint
+  - [x] prettier
   - [x] stylua
-
 - [ ] Look through Christian's Lunar Vim setup for ideas
 - [ ] Configure `noice`
 - [ ] Auto reload config when saving
+- [ ] Fix weird error with: Trailing characters: <Plug>(StopHL)
 
 `:checkhealth which-key`
