@@ -9,7 +9,7 @@ local M = {
 
 M.config = function()
   require('mason-null-ls').setup({
-    ensure_installed = { "stylua", "prettier" },
+    ensure_installed = require('user.null-ls-servers'),
     automatic_installation = true,
   })
 end

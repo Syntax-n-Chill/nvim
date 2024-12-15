@@ -1,0 +1,5 @@
+return {
+  "stylua",
+  "prettier",
+  "taplo"
+}

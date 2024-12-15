@@ -12,6 +12,7 @@ return {
 	"bashls",
 	"jsonls",
 	"yamlls",
+  "taplo",
 	"marksman",
 	"rust_analyzer",
 	"volar",

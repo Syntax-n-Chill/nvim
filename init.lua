@@ -16,11 +16,10 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 	end
 end
 vim.opt.rtp:prepend(lazypath)
-
 -- Imports
 require("vim-options")
 require("lazy").setup({
-	{ import = "plugins" }, -- Include all files from the "plugins" folder
+  { import = "plugins" }, -- Include all files from the "plugins" folder
 	{ import = "extras" }, -- Include all files from the "extras" folder
 })
 

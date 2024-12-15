@@ -18,6 +18,7 @@ return {
           "css",
           "go",
           "php",
+"regex", "bash", "lua"
         },
         highlight = { enable = true },
         indent = { enable = true },
@@ -25,3 +26,5 @@ return {
       })
     end
 }
+
+
