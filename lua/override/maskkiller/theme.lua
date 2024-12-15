@@ -1,7 +1,9 @@
-vim.cmd("colorscheme sonokai")
+local theme_name = 'citruszest'
 
-require("lualine").setup({
-	options = {
-		theme = "sonokai",
-	},
+vim.cmd('colorscheme ' .. theme_name)
+
+require('lualine').setup({
+  options = {
+    theme = theme_name,
+  },
 })
