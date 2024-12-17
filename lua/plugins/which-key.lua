@@ -4,7 +4,7 @@ local M = {
 }
 
 M.opts = {
-  preset = 'helix',
+  preset = 'modern',
   win = {
     border = 'rounded',
     no_overlap = false,
@@ -16,7 +16,7 @@ M.opts = {
     wo = {},
   },
   sort_by_description = true,
-  sort = { 'alphanumerical' },
+  sort = { 'alphanum' },
 }
 
 M.keys = {
