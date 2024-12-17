@@ -4,6 +4,12 @@ This is a breakdown of the Neovim configuration, including all plugins,
 their features, and any associated keybindings. The setup uses
 Lazy.nvim for plugin management.
 
+# Setup
+
+## Recommended
+
+- Install [`prettierd`](https://github.com/fsouza/prettierd) by running `npm install -g @fsouza/prettierd`
+
 # Plugins
 
 ## Theme

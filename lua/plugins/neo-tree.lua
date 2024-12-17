@@ -30,7 +30,8 @@ end
 local dismiss_toggle_notify = function()
   -- Clear previous notification if any
   if M.notify_id then
-    require('notify').dismiss({ id = M.notify_id })
+    local notify = require('notify')
+    notify.dismiss({ id = M.notify_id })
     M.notify_id = nil
   end
 end
@@ -44,6 +45,24 @@ M.config = function()
     },
   })
 
+  local toggle_preview_state = function(state)
+    local commands = require('neo-tree.sources.filesystem.commands')
+
+    -- Toggle preview and update state
+    M.preview_state = not M.preview_state
+    commands.toggle_preview(state)
+    M.neotree_state = state
+
+    -- Clear previous notification if any
+    if not M.preview_state then
+      dismiss_toggle_notify()
+    end
+
+    if M.preview_state then
+      M.notify_id = preview_toggle_notify()
+    end
+  end
+
   local mappings = {
     -- Basic navigation and toggling
     ['<cr>'] = 'open', -- Open file or directory
@@ -54,23 +73,7 @@ M.config = function()
     ['h'] = 'close_node', -- Collapse directory
     ['<space>'] = 'toggle_node', -- Expand/collapse directory
     ['H'] = 'toggle_hidden', -- Toggle hidden files
-    ['P'] = function(state)
-      local commands = require('neo-tree.sources.filesystem.commands')
-
-      -- Toggle preview and update state
-      M.preview_state = not M.preview_state
-      commands.toggle_preview(state)
-      M.neotree_state = state
-
-      -- Clear previous notification if any
-      if not M.preview_state then
-        dismiss_toggle_notify()
-      end
-
-      if M.preview_state then
-        M.notify_id = preview_toggle_notify()
-      end
-    end,
+    ['P'] = toggle_preview_state,
     -- File and directory actions
     ['a'] = 'add', -- Add a file or directory
     ['d'] = 'delete', -- Delete file or directory
