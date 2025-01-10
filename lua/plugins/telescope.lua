@@ -12,6 +12,15 @@ return {
         { '<leader>F', ':Telescope live_grep<CR>', desc = 'Telescope live grep', icon = '🔭' },
         { '<leader>f', ':Telescope find_files<CR>', desc = 'Telescope find files', icon = '🔭' },
         { '<leader>r', ':Telescope oldfiles<CR>', desc = 'Telescope recent files', icon = '🔭' },
+        -- Here is the one you want to replace with an LSP code action call:
+        {
+          'gf',
+          function()
+            vim.lsp.buf.code_action()
+          end,
+          desc = 'LSP code action',
+          icon = '🔧',
+        },
       }) -- Define mappings for normal mode
     end,
   },

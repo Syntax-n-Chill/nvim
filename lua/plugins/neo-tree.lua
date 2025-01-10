@@ -82,6 +82,7 @@ M.config = function()
     ['x'] = 'cut_to_clipboard', -- Cut file to clipboard
     ['p'] = 'paste_from_clipboard', -- Paste file from clipboard
     ['c'] = 'copy', -- Copy file or directory
+    ['Y'] = 'copy_file_path_to_clipboard',
     ['m'] = 'move', -- Move file or directory
 
     -- Search and filtering
@@ -103,6 +104,34 @@ M.config = function()
     -- Window management
     -- ["R"] = "reveal_in_finder",      -- Reveal file in Finder/Explorer
     ['?'] = 'show_help', -- Show help for mapping
+  }
+
+  local user_commands = {
+    copy_file_path_to_clipboard = function(state)
+      -- Make sure we have a tree and a node
+      local tree = state.tree
+      if not tree then
+        vim.notify('No tree found in this state.', vim.log.levels.ERROR)
+        return
+      end
+
+      local node = tree:get_node()
+      if not node then
+        vim.notify('No node selected.', vim.log.levels.ERROR)
+        return
+      end
+
+      -- node.path is usually the absolute path
+      local path = node.path
+      if not path then
+        vim.notify('Selected node has no path.', vim.log.levels.ERROR)
+        return
+      end
+
+      -- Copy to the + register (system clipboard on most OS)
+      vim.fn.setreg('+', path)
+      vim.notify('Copied path to clipboard: ' .. path)
+    end,
   }
 
   vim.api.nvim_create_autocmd('BufEnter', {
@@ -169,6 +198,7 @@ M.config = function()
       follow_current_file = { enabled = true },
     },
     use_default_mappings = false,
+    commands = user_commands,
     window = {
       mappings = mappings,
     },
