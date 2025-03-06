@@ -1,14 +1,14 @@
-vim.cmd("set expandtab")
-vim.cmd("set tabstop=2")
-vim.cmd("set softtabstop=2")
-vim.cmd("set shiftwidth=2")
-vim.cmd("set number")
-vim.cmd("set relativenumber")
+vim.cmd('set expandtab')
+vim.cmd('set tabstop=2')
+vim.cmd('set softtabstop=2')
+vim.cmd('set shiftwidth=2')
+vim.cmd('set number')
+vim.cmd('set relativenumber')
 -- vim.cmd("set scrolloff=50")
 
-vim.g.mapleader = " "
+vim.g.mapleader = ' '
 
-vim.o.mouse = "a" -- Enable mouse for all modes
+vim.o.mouse = 'a' -- Enable mouse for all modes
 
 -- Enable folding
 -- vim.opt.foldenable = true
@@ -31,6 +31,9 @@ vim.o.mouse = "a" -- Enable mouse for all modes
 vim.opt.clipboard = 'unnamedplus'
 
 vim.opt.termguicolors = true
+
+vim.g.copilot_no_tab_map = true
+vim.api.nvim_set_keymap('i', '<C-J>', 'copilot#Accept("<CR>")', { silent = true, expr = true })
 
 -- @NOTE: Will be move to <leader>t which-key
 -- vim.keymap.set('n', '<leader>fu', ':lua require("telescope.builtin").lsp_references()<CR>',

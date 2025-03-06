@@ -19,6 +19,7 @@ vim.opt.rtp:prepend(lazypath)
 -- Imports
 require('vim-options')
 require('lazy').setup({
+  'github/copilot.vim',
   { import = 'plugins' },
   { import = 'extras' },
   { import = 'themes' },

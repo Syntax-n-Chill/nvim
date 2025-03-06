@@ -1,5 +1,5 @@
 return {
-  "stylua",
-  "prettier",
-  "taplo"
+  'stylua',
+  'prettier',
+  'taplo',
 }
